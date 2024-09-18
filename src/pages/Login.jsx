@@ -6,6 +6,8 @@ const Login = () => {
             <div>
                 <FormLogin/>
             </div>
+
+            <h1>{ import.meta.env.VITE_BACKEND_URL }</h1>
         </div>
     );
 }
