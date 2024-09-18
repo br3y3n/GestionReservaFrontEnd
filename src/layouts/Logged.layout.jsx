@@ -12,7 +12,6 @@ const LoggedLayout = ({ children }) => {
     ]
 
     const { user } = useContext(AuthContext);
-    console.log(user);
 
     return (
         <div className='w-screen h-screen bg-[#f2f2f2] flex'>
@@ -20,7 +19,7 @@ const LoggedLayout = ({ children }) => {
             <aside className='bg-dark w-[20vw] h-full p-5 text-white'>
                 <h6 className="text-center font-bold text-2xl mb-3">ReserYa</h6>
                 {
-                    user.tipoUsuario === "Administrador" ? (
+                    user.tipoUsuario !== "Administrador" ? (
                         <ul>
                             <li>
                                 <Link to="/reservas">
@@ -50,7 +49,7 @@ const LoggedLayout = ({ children }) => {
                     )
                 }
             </aside>
-            <main className='w-[70vw] p-5'>
+            <main className='w-[100vw] p-5'>
                 { children }
             </main>
 
