@@ -9,10 +9,11 @@ import {
 
 
 
-const FormLogin = () => {
+const FormRegister = () => {
 
     const [email, setEmail] = useState(null);
     const [password, setPassword] = useState(null);
+    const [nombre, setNombre] = useState(null);
 
 
     const handleLogin = async(credentials) => {
@@ -38,7 +39,7 @@ const FormLogin = () => {
                     Nombre Completo *
                 </Typography>
                 <Input
-                onChange={(e) => set}
+                    onChange={(e) => setNombre(e.target.value)}
                     size="lg"
                     placeholder="Carlos Lopez"
                     className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
@@ -50,6 +51,7 @@ const FormLogin = () => {
                     Correo Elétronico *
                 </Typography>
                 <Input
+                    onChange={(e) => setEmail(e.target.value)}
                     size="lg"
                     placeholder="name@mail.com"
                     className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
@@ -61,6 +63,7 @@ const FormLogin = () => {
                     Contraseña *
                 </Typography>
                 <Input
+                    onChange={(e) => setPassword(e.target.value)}
                     type="password"
                     size="lg"
                     placeholder="********"
@@ -83,4 +86,4 @@ const FormLogin = () => {
     );
 }
 
-export default FormLogin;
+export default FormRegister;
