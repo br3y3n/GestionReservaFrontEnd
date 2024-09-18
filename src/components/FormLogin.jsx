@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { useNavigate, Link } from "react-router-dom"
 import {
     Card,
@@ -11,10 +11,14 @@ import { toast, ToastContainer } from "react-toastify"
 import { login } from '../services/auth.services.js';
 import Loader from './Loader.jsx';
 
+import { AuthContext } from '../context/AuthContext.jsx';
+
 const FormLogin = () => {
 
     document.title = "¡Iniciar sesión!";
     const navigate = useNavigate();
+
+    const { setUser, setIsAuthenticated } = useContext(AuthContext)
 
     const [email, setEmail] = useState(null);
     const [password, setPassword] = useState(null);
@@ -36,6 +40,9 @@ const FormLogin = () => {
 
             if(loginResponse.status == 404) return toast.error("Usuario no encontrado.")
             if(loginResponse.status == 400) return toast.error("Credenciales incorrectas.")
+            
+            setUser(loginResponse.data.data.user);
+            setIsAuthenticated(true);
 
             setLoading(false);
             navigate("/");
