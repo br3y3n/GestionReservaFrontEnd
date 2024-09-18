@@ -32,11 +32,13 @@ const FormLogin = () => {
         try {
 
             const loginResponse = await login(credentials);
+            console.log(loginResponse);
 
             if(loginResponse.status == 404) return toast.error("Usuario no encontrado.")
             if(loginResponse.status == 400) return toast.error("Credenciales incorrectas.")
+
             setLoading(false);
-            return navigate("/");
+            navigate("/");
             
         } catch (error) {
             console.log(error);
