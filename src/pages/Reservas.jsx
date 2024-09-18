@@ -13,6 +13,7 @@ export default function Reservas() {
     const [loading, setLoading] = useState(false);
 
     const { user } = useContext(AuthContext)
+    console.log(user);
 
     useEffect(()=>{
         setLoading(true)
@@ -33,7 +34,7 @@ export default function Reservas() {
         <section className='w-full h-full'>
             { loading && <Loader/> }
             <div className='bg-white w-full rounded-xl mb-10'>
-                <h1 className='text-2xl drop-shadow-lg ml-10'> <span className='text-3xl font-semibold '>HI,</span> { user.user.nombre }</h1>
+                <h1 className='text-2xl drop-shadow-lg ml-10'> <span className='text-3xl font-semibold '>HI,</span> { user.user?.nombre || user?.nombre }</h1>
             </div>
             
             <div className='grid grid-cols-3 gap-4'>
