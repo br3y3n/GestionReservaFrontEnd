@@ -12,6 +12,7 @@ export default withMT({
       },
       colors: {
         'dark': '#1e1e1e',
+        'dark-gradient': '#00000080'
       }
     },
   },
