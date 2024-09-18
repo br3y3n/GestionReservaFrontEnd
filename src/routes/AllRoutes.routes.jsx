@@ -8,7 +8,7 @@ import Register from "../pages/Register.jsx";
 import Test from "../pages/Test.jsx";
 
 
-
+import { FormReserva } from "../components/FormReserva.jsx";
 const AllRoutes = () => {
     return (
         <Routes>
@@ -20,6 +20,7 @@ const AllRoutes = () => {
                 <Route  path="/crearlugar" element={<CrearLugar/>}/>
                 <Route  path="/reservas" element={<Reservas/>}/>
                 <Route path="/" element={<Navigate to="/reservas"/>}/>
+                <Route element={<FormReserva/>} path='/crear-reserva'/>
             </Route>
         </Routes>
     );

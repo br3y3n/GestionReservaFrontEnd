@@ -49,7 +49,7 @@ const LoggedLayout = ({ children }) => {
                     )
                 }
             </aside>
-            <main className='w-[100vw] p-5'>
+            <main className='w-[100vw] p-5 overflow-y-scroll'>
                 { children }
             </main>
 
